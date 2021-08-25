@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import NavMenu from "../nav-menu/nav-menu";
+import React, { Fragment, useState } from "react";
+import NavMenu from "./nav-menu/nav-menu";
+import SignIn from "./sign-in/sign-in";
 
 const MenuBtn = () => {
     return (
@@ -13,11 +14,20 @@ const MenuBtn = () => {
     );
 };
 
-const UserLogedIn = () => {
+const UserLogedIn = ({ setIsLogin }) => {
     return (
-        <li>
-            <a href='#'>Admin</a>
-        </li>
+        <Fragment>
+            <li>
+                <a href='#'>Admin</a>
+            </li>
+            <a
+                class='waves-effect waves-light btn modal-trigger'
+                onClick={() => setIsLogin(false)}
+            >
+                LOGOUT
+                <i class='material-icons right'>logout</i>
+            </a>
+        </Fragment>
     );
 };
 
@@ -30,7 +40,7 @@ const UserAnonim = () => {
     );
 };
 
-const Header = ({ isLogin }) => {
+const Header = ({ isLogin, setIsLogin }) => {
     return (
         <header>
             <nav>
@@ -40,11 +50,16 @@ const Header = ({ isLogin }) => {
                     </a>
                     {isLogin ? <MenuBtn /> : null}
                     <ul class='right'>
-                        {isLogin ? <UserLogedIn /> : <UserAnonim />}
+                        {isLogin ? (
+                            <UserLogedIn setIsLogin={setIsLogin} />
+                        ) : (
+                            <UserAnonim />
+                        )}
                     </ul>
                 </div>
             </nav>
             <NavMenu />
+            <SignIn setIsLogin={setIsLogin} isLogin={isLogin} />
         </header>
     );
 };

@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Header from "../header/header";
-import SignIn from "../sign-in/sign-in";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import EmployeesPage from "../pages/employees-page";
 
 const App = () => {
     const [isLogin, setIsLogin] = useState(false);
+    const [addEmployee, setAddEmployee] = useState(false);
 
     return (
-        <div>
-            <Header isLogin={isLogin} />
-            <SignIn setIsLogin={setIsLogin} isLogin={isLogin} />
-            <h1>App</h1>
-        </div>
+        <Fragment>
+            <Router>
+                <Header isLogin={isLogin} setIsLogin={setIsLogin} />
+                <Switch>
+                    <Route path='/Employees'>
+                        <EmployeesPage />
+                    </Route>
+                </Switch>
+            </Router>
+        </Fragment>
     );
 };
 

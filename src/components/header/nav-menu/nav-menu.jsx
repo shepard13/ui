@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class NavMenu extends Component {
     componentDidMount() {
@@ -12,9 +13,9 @@ export default class NavMenu extends Component {
         return (
             <ul id='slide-out' class='sidenav'>
                 <li>
-                    <a class='waves-effect' href='#!'>
-                        Menu 1
-                    </a>
+                    <Link class='waves-effect' to='/Employees'>
+                        Home
+                    </Link>
                 </li>
                 <li>
                     <div class='divider'></div>
