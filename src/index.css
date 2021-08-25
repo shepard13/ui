@@ -1,7 +1,5 @@
 .submit {
     display: flex;
-    height: 100%;
-    width: 100%;
     justify-content: center;
     margin-top: 10px;
 }
@@ -19,6 +17,10 @@
 }
 
 h3 {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+}
+
+.table-wrapper {
+    height: 90vh;
+    overflow-y: auto;
 }

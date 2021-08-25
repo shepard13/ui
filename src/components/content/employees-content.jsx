@@ -45,7 +45,7 @@ const EmployeesTable = () => {
     }
 
     return (
-        <Fragment>
+        <div className='table-wrapper'>
             <h3>Employees</h3>
             <table className='striped highlight centered'>
                 <thead>
@@ -89,7 +89,7 @@ const EmployeesTable = () => {
                 </a>
             </div>
             <AddNewEmployee addNewEmployee={addNewEmployee} id={idNum} />
-        </Fragment>
+        </div>
     );
 };
 

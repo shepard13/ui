@@ -11,7 +11,13 @@ const AddNewEmployee = ({ addNewEmployee, id }) => {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        addNewEmployee({ id: ++id, ...data });
+        if (data) {
+            addNewEmployee({ id: ++id, ...data });
+            M.Modal.init(document.querySelectorAll(".modal"), {}).close();
+        }
+    };
+    const closeModal = () => {
+        M.Modal.init(document.querySelectorAll(".modal"), {}).close();
     };
     return (
         <div id='modal2' className='modal'>
@@ -27,29 +33,30 @@ const AddNewEmployee = ({ addNewEmployee, id }) => {
                         placeholder='Name'
                         {...register("name", { required: true })}
                     />
-                    {errors.login?.type === "required" && "login is required"}
+                    {errors.name?.type === "required" && "name is required"}
                     <input
                         type='text'
                         placeholder='Surname'
                         {...register("surname", { required: true })}
                     />
-                    {errors.login?.type === "required" && "login is required"}
+                    {errors.surname?.type === "required" &&
+                        "surname is required"}
                     <input
                         type='email'
                         placeholder='Email'
                         {...register("email", { required: true })}
                     />
-                    {errors.login?.type === "required" && "login is required"}
+                    {errors.email?.type === "required" && "email is required"}
                     <input
                         type='number'
                         placeholder='Age'
                         {...register("age", { required: true })}
                     />
-                    {errors.login?.type === "required" && "login is required"}
+                    {errors.age?.type === "required" && "age is required"}
 
                     <button
                         type='submit'
-                        className='modal-close  submit waves-effect waves-light btn-large'
+                        className='submit waves-effect waves-light btn-large'
                     >
                         ADD
                     </button>

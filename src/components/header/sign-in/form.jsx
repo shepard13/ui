@@ -14,6 +14,7 @@ const SignInForm = ({ setIsLogin, isLogin, closeModal }) => {
         if (data.login === LOGIN && data.password === PASSWORD) {
             setIsLogin(true);
             closeModal();
+            console.log("hi", errors);
         } else {
             setInvalidData("Incorrect input");
         }
