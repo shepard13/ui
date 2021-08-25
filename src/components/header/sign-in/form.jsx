@@ -33,11 +33,11 @@ const SignInForm = ({ setIsLogin, isLogin, closeModal }) => {
                 {...register("password", { required: true })}
             />
             {errors.password?.type === "required" && "password is required"}
-            <span classNameName='red-text darken-4'>{invalidData}</span>
+            <span className='red-text darken-4'>{invalidData}</span>
 
             <button
                 type='submit'
-                classNameName='submit waves-effect waves-light btn-large'
+                className='submit waves-effect waves-light btn-large'
             >
                 LOG IN
             </button>
