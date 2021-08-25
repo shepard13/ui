@@ -13,7 +13,7 @@ export default class NavMenu extends Component {
         return (
             <ul id='slide-out' class='sidenav'>
                 <li>
-                    <Link class='waves-effect' to='/Employees'>
+                    <Link class='waves-effect sidenav-close' to='/Employees'>
                         Employees
                     </Link>
                 </li>
@@ -21,7 +21,7 @@ export default class NavMenu extends Component {
                     <div class='divider'></div>
                 </li>
                 <li>
-                    <a class='waves-effect' href='#!'>
+                    <a class='waves-effect sidenav-close' href='#!'>
                         Menu 2
                     </a>
                 </li>
