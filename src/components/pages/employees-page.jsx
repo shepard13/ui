@@ -4,7 +4,7 @@ import EmployeesTable from "../content/employees-content";
 const EmployeesPage = () => {
     return (
         <Fragment>
-            <EmployeesTable />;
+            <EmployeesTable />
         </Fragment>
     );
 };

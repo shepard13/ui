@@ -22,3 +22,9 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+.add-employee {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

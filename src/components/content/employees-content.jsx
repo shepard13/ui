@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Component, Fragment, useEffect, useState } from "react";
 import AddNewEmployee from "./add-new-employee";
 import { getEmployees } from "../../data/employees";
+
 const EmployeesTable = () => {
     const [employees, setEmployees] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -13,14 +14,6 @@ const EmployeesTable = () => {
         });
     }, []);
 
-    const action = () => {
-        const M = window.M;
-        console.log("hi");
-
-        const el = document.querySelectorAll(".fixed-action-btn");
-        const init = M.FloatingActionButton.init(el, {});
-        init.open();
-    };
     const deleteEmployee = (id) => {
         const result = employees.filter((elem) => elem.id !== id);
         setEmployees(result);
@@ -86,37 +79,13 @@ const EmployeesTable = () => {
                     })}
                 </tbody>
             </table>
-            <div class='fixed-action-btn'>
-                <a class='btn-floating btn-large red'>
-                    <i onClick={action} class='large material-icons'>
-                        mode_edit
-                    </i>
+            <div className='add-employee'>
+                <a
+                    className='btn-floating waves-effect waves-light btn-large modal-trigger'
+                    href='#modal2'
+                >
+                    <i class='material-icons'>add</i>
                 </a>
-                <ul>
-                    <li>
-                        <a
-                            className='btn-floating btn-large waves-effect waves-light modal-trigger'
-                            href='#modal2'
-                        >
-                            <i className='material-icons'>add</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class='btn-floating yellow darken-1'>
-                            <i class='material-icons'>format_quote</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class='btn-floating green'>
-                            <i class='material-icons'>publish</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class='btn-floating blue'>
-                            <i class='material-icons'>attach_file</i>
-                        </a>
-                    </li>
-                </ul>
             </div>
             <AddNewEmployee addNewEmployee={addNewEmployee} id={idNum} />
         </Fragment>
