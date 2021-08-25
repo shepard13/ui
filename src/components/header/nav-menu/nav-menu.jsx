@@ -14,7 +14,7 @@ export default class NavMenu extends Component {
             <ul id='slide-out' class='sidenav'>
                 <li>
                     <Link class='waves-effect' to='/Employees'>
-                        Home
+                        Employees
                     </Link>
                 </li>
                 <li>

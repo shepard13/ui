@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import NavMenu from "./nav-menu/nav-menu";
 import SignIn from "./sign-in/sign-in";
+import { useHistory } from "react-router-dom";
 
 const MenuBtn = () => {
     return (
@@ -15,6 +16,11 @@ const MenuBtn = () => {
 };
 
 const UserLogedIn = ({ setIsLogin }) => {
+    let history = useHistory();
+
+    const redirect = () => {
+        history.push("/");
+    };
     return (
         <Fragment>
             <li>
@@ -22,9 +28,12 @@ const UserLogedIn = ({ setIsLogin }) => {
             </li>
             <a
                 class='waves-effect waves-light btn modal-trigger'
-                onClick={() => setIsLogin(false)}
+                onClick={() => {
+                    setIsLogin(false);
+                    redirect();
+                }}
             >
-                LOGOUT
+                LOG OUT
                 <i class='material-icons right'>logout</i>
             </a>
         </Fragment>
@@ -34,7 +43,7 @@ const UserLogedIn = ({ setIsLogin }) => {
 const UserAnonim = () => {
     return (
         <a class='waves-effect waves-light btn modal-trigger' href='#modal1'>
-            LOGIN
+            LOG IN
             <i class='material-icons right'>login</i>
         </a>
     );

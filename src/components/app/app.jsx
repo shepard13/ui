@@ -7,6 +7,9 @@ const App = () => {
     const [isLogin, setIsLogin] = useState(false);
     const [addEmployee, setAddEmployee] = useState(false);
 
+    if (!isLogin) {
+    }
+
     return (
         <Fragment>
             <Router>

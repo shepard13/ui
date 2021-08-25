@@ -13,10 +13,9 @@ const SignInForm = ({ setIsLogin, isLogin, closeModal }) => {
     const onSubmit = (data) => {
         if (data.login === LOGIN && data.password === PASSWORD) {
             setIsLogin(true);
-            setInvalidData("Success");
             closeModal();
         } else {
-            setInvalidData("Try Again");
+            setInvalidData("Incorrect input");
         }
     };
 
@@ -34,8 +33,14 @@ const SignInForm = ({ setIsLogin, isLogin, closeModal }) => {
                 {...register("password", { required: true })}
             />
             {errors.password?.type === "required" && "password is required"}
-            <input type='submit' />
-            {invalidData}
+            <span className='red-text darken-4'>{invalidData}</span>
+
+            <button
+                type='submit'
+                className='submit waves-effect waves-light btn-large'
+            >
+                LOG IN
+            </button>
         </form>
     );
 };

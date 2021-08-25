@@ -6,6 +6,7 @@ const SignIn = ({ setIsLogin, isLogin }) => {
         const elems = document.querySelectorAll(".modal");
         M.Modal.init(elems, {});
     }, []);
+
     const closeModal = () => {
         M.Modal.init(document.querySelectorAll(".modal"), {}).close();
     };
