@@ -24,8 +24,14 @@ const AddNewEmployee = ({ addNewEmployee, id }) => {
                     </div>
                     <input
                         type='text'
-                        placeholder='First Name'
-                        {...register("firstName", { required: true })}
+                        placeholder='Name'
+                        {...register("name", { required: true })}
+                    />
+                    {errors.login?.type === "required" && "login is required"}
+                    <input
+                        type='text'
+                        placeholder='Surname'
+                        {...register("surname", { required: true })}
                     />
                     {errors.login?.type === "required" && "login is required"}
                     <input
@@ -35,9 +41,9 @@ const AddNewEmployee = ({ addNewEmployee, id }) => {
                     />
                     {errors.login?.type === "required" && "login is required"}
                     <input
-                        type='text'
-                        placeholder='Position'
-                        {...register("position", { required: true })}
+                        type='number'
+                        placeholder='Age'
+                        {...register("age", { required: true })}
                     />
                     {errors.login?.type === "required" && "login is required"}
 

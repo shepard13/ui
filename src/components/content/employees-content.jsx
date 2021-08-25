@@ -46,13 +46,14 @@ const EmployeesTable = () => {
 
     return (
         <Fragment>
+            <h3>Employees</h3>
             <table className='striped highlight centered'>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
+                        <th>Name</th>
+                        <th>Surname</th>
                         <th>Email</th>
-                        <th>Position</th>
+                        <th>Age</th>
                     </tr>
                 </thead>
 
@@ -60,10 +61,10 @@ const EmployeesTable = () => {
                     {employees.map((employee) => {
                         return (
                             <tr>
-                                <td>{employee.id}</td>
-                                <td>{employee.firstName}</td>
+                                <td>{employee.name}</td>
+                                <td>{employee.surname}</td>
                                 <td>{employee.email}</td>
-                                <td>{employee.position}</td>
+                                <td>{employee.age}</td>
                                 <td>
                                     <a
                                         onClick={() =>

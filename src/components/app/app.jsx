@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Header from "../header/header";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EmployeesPage from "../pages/employees-page";
@@ -18,7 +18,7 @@ const App = () => {
                         <EmployeesPage />
                     </Route>
                     <Route path='/Menu1'>
-                        <h1>Menu1</h1>
+                        <h3>Menu1</h3>
                     </Route>
                 </Switch>
             </Router>

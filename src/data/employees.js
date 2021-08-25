@@ -1,8 +1,8 @@
 const employees = [
-    { id: 1, firstName: "John", email: "email@gmail.com", position: "manager" },
-    { id: 2, firstName: "John", email: "email@gmail.com", position: "manager" },
-    { id: 3, firstName: "John", email: "email@gmail.com", position: "manager" },
-    { id: 4, firstName: "John", email: "email@gmail.com", position: "manager" },
+    { id: 1, name: "John", surname: "Hey", email: "email@gmail.com", age: 20 },
+    { id: 2, name: "John", surname: "Hey", email: "email@gmail.com", age: 19 },
+    { id: 3, name: "John", surname: "Hey", email: "email@gmail.com", age: 35 },
+    { id: 4, name: "John", surname: "Hey", email: "email@gmail.com", age: 40 },
 ];
 
 const getEmployees = () => {

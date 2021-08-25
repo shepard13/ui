@@ -23,9 +23,6 @@ const UserLogedIn = ({ setIsLogin }) => {
     };
     return (
         <Fragment>
-            <li>
-                <a href='#'>Admin</a>
-            </li>
             <a
                 className='waves-effect waves-light btn modal-trigger'
                 onClick={() => {
