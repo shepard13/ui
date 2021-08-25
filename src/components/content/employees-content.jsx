@@ -80,7 +80,7 @@ const EmployeesTable = () => {
                     })}
                 </tbody>
             </table>
-            <div className='add-employee'>
+            <div className='add-content-btn'>
                 <a
                     className='btn-floating waves-effect waves-light btn-large modal-trigger'
                     href='#modal2'
