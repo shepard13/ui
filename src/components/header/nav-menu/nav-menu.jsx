@@ -46,7 +46,10 @@ export default class NavMenu extends Component {
                     <div className='divider'></div>
                 </li>
                 <li>
-                    <a href='#!'>Menu1</a>
+                    <Link className='waves-effect sidenav-close' to='/Menu1'>
+                        <i className='material-icons'>apps</i>
+                        Menu 1
+                    </Link>
                 </li>
 
                 <li>

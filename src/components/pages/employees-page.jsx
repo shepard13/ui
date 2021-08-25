@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import EmployeesTable from "../content/employees-content";
 
 const EmployeesPage = () => {
-    return <EmployeesTable />;
+    return (
+        <Fragment>
+            <EmployeesTable />;
+        </Fragment>
+    );
 };
 export default EmployeesPage;
