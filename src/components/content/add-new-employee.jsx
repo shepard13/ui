@@ -33,26 +33,41 @@ const AddNewEmployee = ({ addNewEmployee, id }) => {
                         placeholder='Name'
                         {...register("name", { required: true })}
                     />
-                    {errors.name?.type === "required" && "name is required"}
+                    {errors.name?.type === "required" && (
+                        <span class='red-text text-darken-2'>
+                            Name is required
+                        </span>
+                    )}
                     <input
                         type='text'
                         placeholder='Surname'
                         {...register("surname", { required: true })}
                     />
-                    {errors.surname?.type === "required" &&
-                        "surname is required"}
+                    {errors.surname?.type === "required" && (
+                        <span class='red-text text-darken-2'>
+                            Surname is required
+                        </span>
+                    )}
                     <input
                         type='email'
                         placeholder='Email'
                         {...register("email", { required: true })}
                     />
-                    {errors.email?.type === "required" && "email is required"}
+                    {errors.email?.type === "required" && (
+                        <span class='red-text text-darken-2'>
+                            Email is required
+                        </span>
+                    )}
                     <input
                         type='number'
                         placeholder='Age'
                         {...register("age", { required: true })}
                     />
-                    {errors.age?.type === "required" && "age is required"}
+                    {errors.age?.type === "required" && (
+                        <span class='red-text text-darken-2'>
+                            Age is required
+                        </span>
+                    )}
 
                     <button
                         type='submit'
