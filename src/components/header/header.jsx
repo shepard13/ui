@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import NavMenu from "../nav-menu/nav-menu";
-const Header = () => {
+
+const MenuBtn = () => {
+    return (
+        <a
+            href='#'
+            data-target='slide-out'
+            class=' sidenav-trigger show-on-large'
+        >
+            <i class='material-icons'>menu</i>
+        </a>
+    );
+};
+
+const UserLogedIn = () => {
+    return (
+        <li>
+            <a href='#'>Admin</a>
+        </li>
+    );
+};
+
+const UserAnonim = () => {
+    return (
+        <a class='waves-effect waves-light btn modal-trigger' href='#modal1'>
+            LOGIN
+            <i class='material-icons right'>login</i>
+        </a>
+    );
+};
+
+const Header = ({ isLogin }) => {
     return (
         <header>
             <nav>
@@ -8,22 +38,9 @@ const Header = () => {
                     <a href='#!' class='brand-logo center'>
                         Logo
                     </a>
-                    <a
-                        href='#'
-                        data-target='slide-out'
-                        class='sidenav-trigger show-on-large'
-                    >
-                        <i class='material-icons'>menu</i>
-                    </a>
-
+                    {isLogin ? <MenuBtn /> : null}
                     <ul class='right'>
-                        <a
-                            class='waves-effect waves-light btn modal-trigger'
-                            href='#modal1'
-                        >
-                            LOGIN
-                            <i class='material-icons right'>login</i>
-                        </a>
+                        {isLogin ? <UserLogedIn /> : <UserAnonim />}
                     </ul>
                 </div>
             </nav>

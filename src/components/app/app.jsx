@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../header/header";
 import SignIn from "../sign-in/sign-in";
-import NavMenu from "../nav-menu/nav-menu";
 
 const App = () => {
+    const [isLogin, setIsLogin] = useState(false);
+
     return (
         <div>
-            <Header />
-            <SignIn />
-            <NavMenu />
+            <Header isLogin={isLogin} />
+            <SignIn setIsLogin={setIsLogin} isLogin={isLogin} />
             <h1>App</h1>
         </div>
     );
