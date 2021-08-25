@@ -1,8 +1,8 @@
 const employees = [
-    { firstName: "John", email: "email@gmail.com", position: "manager" },
-    { firstName: "John", email: "email@gmail.com", position: "manager" },
-    { firstName: "John", email: "email@gmail.com", position: "manager" },
-    { firstName: "John", email: "email@gmail.com", position: "manager" },
+    { id: 1, firstName: "John", email: "email@gmail.com", position: "manager" },
+    { id: 2, firstName: "John", email: "email@gmail.com", position: "manager" },
+    { id: 3, firstName: "John", email: "email@gmail.com", position: "manager" },
+    { id: 4, firstName: "John", email: "email@gmail.com", position: "manager" },
 ];
 
 const getEmployees = () => {
@@ -11,8 +11,4 @@ const getEmployees = () => {
     });
 };
 
-const setEmployees = (data) => {
-    employees.push(data);
-};
-
-export { getEmployees, setEmployees };
+export { getEmployees };

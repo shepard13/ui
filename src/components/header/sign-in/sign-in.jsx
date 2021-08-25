@@ -11,8 +11,8 @@ const SignIn = ({ setIsLogin, isLogin }) => {
         M.Modal.init(document.querySelectorAll(".modal"), {}).close();
     };
     return (
-        <div id='modal1' class='modal'>
-            <div class='modal-content'>
+        <div id='modal1' className='modal'>
+            <div className='modal-content'>
                 <SignInForm
                     setIsLogin={setIsLogin}
                     isLogin={isLogin}

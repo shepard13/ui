@@ -6,11 +6,6 @@
     margin-top: 10px;
 }
 
-.sidenav li {
-    display: flex;
-    justify-content: center;
-}
-
 .add-content-btn {
     margin-top: 20px;
     display: flex;

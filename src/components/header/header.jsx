@@ -8,9 +8,9 @@ const MenuBtn = () => {
         <a
             href='#'
             data-target='slide-out'
-            class=' sidenav-trigger show-on-large'
+            className=' sidenav-trigger show-on-large'
         >
-            <i class='material-icons'>menu</i>
+            <i className='material-icons'>menu</i>
         </a>
     );
 };
@@ -27,14 +27,14 @@ const UserLogedIn = ({ setIsLogin }) => {
                 <a href='#'>Admin</a>
             </li>
             <a
-                class='waves-effect waves-light btn modal-trigger'
+                className='waves-effect waves-light btn modal-trigger'
                 onClick={() => {
                     setIsLogin(false);
                     redirect();
                 }}
             >
                 LOG OUT
-                <i class='material-icons right'>logout</i>
+                <i className='material-icons right'>logout</i>
             </a>
         </Fragment>
     );
@@ -42,9 +42,12 @@ const UserLogedIn = ({ setIsLogin }) => {
 
 const UserAnonim = () => {
     return (
-        <a class='waves-effect waves-light btn modal-trigger' href='#modal1'>
+        <a
+            className='waves-effect waves-light btn modal-trigger'
+            href='#modal1'
+        >
             LOG IN
-            <i class='material-icons right'>login</i>
+            <i className='material-icons right'>login</i>
         </a>
     );
 };
@@ -53,12 +56,12 @@ const Header = ({ isLogin, setIsLogin }) => {
     return (
         <header>
             <nav>
-                <div class='nav-wrapper'>
-                    <a href='#!' class='brand-logo center'>
+                <div className='nav-wrapper'>
+                    <a href='#!' className='brand-logo center'>
                         Logo
                     </a>
                     {isLogin ? <MenuBtn /> : null}
-                    <ul class='right'>
+                    <ul className='right'>
                         {isLogin ? (
                             <UserLogedIn setIsLogin={setIsLogin} />
                         ) : (

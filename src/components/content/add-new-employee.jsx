@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { setEmployees } from "../../data/employees";
-const AddNewEmployee = () => {
+const AddNewEmployee = ({ addNewEmployee, id }) => {
     useEffect(() => {
         const elems = document.querySelectorAll(".modal");
         M.Modal.init(elems, {});
@@ -12,12 +11,17 @@ const AddNewEmployee = () => {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        setEmployees(data);
+        addNewEmployee({ id: ++id, ...data });
     };
     return (
-        <div id='modal2' class='modal'>
-            <div class='modal-content'>
+        <div id='modal2' className='modal'>
+            <div className='modal-content'>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className='close'>
+                        <button className='modal-close right waves-effect waves-green btn'>
+                            X
+                        </button>
+                    </div>
                     <input
                         type='text'
                         placeholder='First Name'
@@ -39,7 +43,7 @@ const AddNewEmployee = () => {
 
                     <button
                         type='submit'
-                        className='submit waves-effect waves-light btn-large'
+                        className='modal-close  submit waves-effect waves-light btn-large'
                     >
                         ADD
                     </button>

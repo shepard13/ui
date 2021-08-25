@@ -5,27 +5,38 @@ import { getEmployees } from "../../data/employees";
 const EmployeesTable = () => {
     const [employees, setEmployees] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [idNum, setIdNum] = useState(4);
+
     useEffect(() => {
         getEmployees().then((data) => {
             setEmployees(data);
             setLoading(false);
         });
-    }, [employees]);
+    }, []);
 
-    console.log(employees);
+    const deleteEmployee = (id) => {
+        const result = employees.filter((elem) => elem.id !== id);
+        setEmployees(result);
+    };
+
+    const addNewEmployee = (data) => {
+        setEmployees([...employees, data]);
+        setIdNum(idNum + 1);
+    };
+
     if (loading) {
         return (
             <div className='loader'>
-                <div class='preloader-wrapper big active'>
-                    <div class='spinner-layer spinner-blue-only'>
-                        <div class='circle-clipper left'>
-                            <div class='circle'></div>
+                <div className='preloader-wrapper big active'>
+                    <div className='spinner-layer spinner-blue-only'>
+                        <div className='circle-clipper left'>
+                            <div className='circle'></div>
                         </div>
-                        <div class='gap-patch'>
-                            <div class='circle'></div>
+                        <div className='gap-patch'>
+                            <div className='circle'></div>
                         </div>
-                        <div class='circle-clipper right'>
-                            <div class='circle'></div>
+                        <div className='circle-clipper right'>
+                            <div className='circle'></div>
                         </div>
                     </div>
                 </div>
@@ -38,6 +49,7 @@ const EmployeesTable = () => {
             <table className='striped highlight centered'>
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>First Name</th>
                         <th>Email</th>
                         <th>Position</th>
@@ -48,9 +60,20 @@ const EmployeesTable = () => {
                     {employees.map((employee) => {
                         return (
                             <tr>
+                                <td>{employee.id}</td>
                                 <td>{employee.firstName}</td>
                                 <td>{employee.email}</td>
                                 <td>{employee.position}</td>
+                                <td>
+                                    <i
+                                        onClick={() =>
+                                            deleteEmployee(employee.id)
+                                        }
+                                        className='material-icons'
+                                    >
+                                        delete_forever
+                                    </i>
+                                </td>
                             </tr>
                         );
                     })}
@@ -58,13 +81,13 @@ const EmployeesTable = () => {
             </table>
             <div className='add-content-btn'>
                 <a
-                    class='btn-floating btn-large waves-effect waves-light modal-trigger'
+                    className='btn-floating btn-large waves-effect waves-light modal-trigger'
                     href='#modal2'
                 >
-                    <i class='material-icons'>add</i>
+                    <i className='material-icons'>add</i>
                 </a>
             </div>
-            <AddNewEmployee />
+            <AddNewEmployee addNewEmployee={addNewEmployee} id={idNum} />
         </Fragment>
     );
 };
